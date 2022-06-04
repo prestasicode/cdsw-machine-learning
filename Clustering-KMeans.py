@@ -51,3 +51,10 @@ with open("silhouette.txt","w") as file:
     silhouette_score.append(score)
     msg = "Number cluster :", i, "Silhouette Score:",score
     file.write(str(msg))
+    
+    
+def output_agg(output_table_1):
+    query = f"""select * from {output_table_1}"""
+    print(query)
+    output_agg_1 = spark.sql(query)
+    return output_agg_1
