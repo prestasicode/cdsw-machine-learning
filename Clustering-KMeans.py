@@ -1,7 +1,7 @@
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorAssembler
 from pyspark.ml import Pipeline
-from pyspark.ml.feature import StandardScaler
+from pyspark.ml.feature import MinMaxScaler
 from pyspark.ml.feature import Imputer 
 from pyspark.ml.clustering import KMeans
 from pyspark.ml.feature import PCA as PCAml
