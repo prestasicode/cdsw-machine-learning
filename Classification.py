@@ -81,10 +81,8 @@ data_fix.show(2)
 cust = spark.sql("""
 __""")
 
-#Join Result Model with Master Customer
 df_merged = data_fix.join(cust, [''], 'inner')
 df_merged.printSchema()
 
-#Comply RAC for Top Up Non Individu
 df1 = df_merged.withColumn("", 
           when(())
