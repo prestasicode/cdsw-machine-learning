@@ -8,7 +8,7 @@ from pyspark.ml.feature import PCA as PCAml
 from pyspark.ml.evaluation import ClusteringEvaluator
 from pyspark.ml.clustering import BisectingKMeans
 
-spark = SparkSession.builder.appName("explore").getOrCreate()
+spark = SparkSession.builder.appName("explore").config(conf=SparkConf().setAll([('spark.yarn.queue', 'root.cdsw')])).getOrCreate()
 spark.conf.set('spark.sql.caseSensitive', False)
 
 #Read Data
