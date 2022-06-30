@@ -3,3 +3,6 @@
 
 spark.sql("var1 = '{b}' and var2 = '{a}' ")
 """.format(a=var2, b=var1)
+
+if a = b
+var1 = '{a}' and var2 = '{a}'
