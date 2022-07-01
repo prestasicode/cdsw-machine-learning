@@ -1,0 +1,6 @@
+CREATE EXTERNAL TABLE usecase_customersegmentation(
+id STRING,
+kelompok_cust STRING,
+tgl_update TIMESTAMP)
+PARTITIONED BY (periode_bulan STRING, kategori_cust STRING)
+STORED AS PARQUET LOCATION 'hdfs://service/directory'
