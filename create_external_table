@@ -3,4 +3,13 @@ id STRING,
 kelompok_cust STRING,
 tgl_update TIMESTAMP)
 PARTITIONED BY (periode_bulan STRING, kategori_cust STRING)
-STORED AS PARQUET LOCATION 'hdfs://service/directory'
+ROW FORMAT SERDE
+'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
+STORED AS INPUTFORMAT
+'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat'
+OUTPUTFORMAT
+'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'
+LOCATION
+'hdfs://service/directory'
+TBLPROPERTIES (
+'bucketing_version'='2')
